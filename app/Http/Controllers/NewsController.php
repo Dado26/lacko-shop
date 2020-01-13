@@ -7,53 +7,76 @@ use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
+        $news = News::query()->latest()->paginate(8);
 
-        $news = News::paginate(8);
-        return view('news', compact('news'));
+        return view('news.index', compact('news'));
     }
 
-    public function create()
-    {
-        return view('galerry.index');
-    }
-
+    /**
+     * @param  \Illuminate\Http\Request  $request
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function store(Request $request)
     {
-        $data =  $request->validate([
+        $data = $request->validate([
             'title' => 'required|min:2',
-            'text' => 'required|min:3',
+            'text'  => 'required|min:3',
         ]);
+
         News::create($data);
-        session()->flash('success', 'Created succesffuly');
+        session()->flash('success', 'News was created successfully');
+
         return redirect()->back();
     }
 
-    public function edit(News $new)
+    /**
+     * @param  \App\Models\News  $news
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function edit(News $news)
     {
-
-        $news = News::paginate(8);
-        return view('news', compact('news', 'new'));
+        return view('news.edit', compact('news'));
     }
 
-    public function update(Request $request, News $new)
+    /**
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\News  $news
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function update(Request $request, News $news)
     {
-        $data =  $request->validate([
+        $data = $request->validate([
             'title' => 'required|min:2',
-            'text' => 'required|min:3',
+            'text'  => 'required|min:3',
         ]);
 
-        $new->update($data);
-        session()->flash('success', 'Edited succesffuly');
-        return redirect()->back();
+        $news->update($data);
+
+        session()->flash('success', 'News was updated successfully');
+
+        return redirect()->route('news.index');
     }
 
-    public function destroy(News $new)
+    /**
+     * @param  \App\Models\News  $news
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Exception
+     */
+    public function destroy(News $news)
     {
-        $new->delete();
+        $news->delete();
 
-        session()->flash('success', 'Deleted succesffuly');
+        session()->flash('success', 'News was deleted successfully');
+
         return redirect()->back();
     }
 }
