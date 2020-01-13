@@ -94,7 +94,7 @@
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown show ">                        
                                 <img src="{{ url('/images/profile-boy.jpg') }}" alt="user" class="rounded-circle" width="50" style="padding-bottom:15px">
-                                <span class="ml-2 d-none d-lg-inline-block"> <span class="text-dark">Hello {{ auth()->user()->name }}</span> </span>                        
+                                <span class="ml-2 d-none d-lg-inline-block"> <span class="text-dark">Hello, {{ auth()->user()->name }}</span> </span>                        
                         </li>
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
@@ -205,7 +205,7 @@ $(".btn-delete").on("click", function(){
 
     $.confirm({
         title: 'Confirm!',
-        content: 'Do you want to delete this item?',
+        content: 'Do you want to delete this news?',
         buttons: {
             confirm: function () {
                 $deleteBtn.closest('form').submit();

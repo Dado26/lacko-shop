@@ -16,7 +16,7 @@ Route::group(['middleware' => 'guest'], function () {
     Route::post('login', 'AuthController@loginAttempt')->name('admin.login_attempt');
 });
 
-Route::group(['middleware' => 'auth:web'], function () {
+Route::group(['middleware' => 'auth'], function () {
 
 Route::get('logout', 'AuthController@logOut')->name('logout');
 

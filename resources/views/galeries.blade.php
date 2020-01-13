@@ -1,7 +1,9 @@
 @extends('layout')
 
 @section('content')
-
+@if(session()->has('success'))
+                <div class="alert alert-success"> {{session()->get('success')}} </div> 
+@endif
 <div class="row">
  
  <div class="col-sm-12 col-md-8 col-lg-8">
@@ -55,9 +57,7 @@
     </div> 
     
 <div class="col-sm-12 col-md-4 col-lg-4">
-@if(session()->has('success'))
-                <div class="alert alert-success"> {{session()->get('success')}} </div> 
-@endif
+
                         <div class="card">
                         @include('partials.errors')
                             <div class="card-body">
