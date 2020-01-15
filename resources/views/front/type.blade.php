@@ -24,6 +24,35 @@
       </p>
     </div>
   </div>
+  <h1 class="page-title">Paleta Boja</h1>
+<div class="color-palette">
+    <ul>
+      <li>
+       <img class="col-md-6 col-sm-12" src="img/palette/summer-delight.jpg" alt=""><span>Summer Delight</span>
+      </li>
+      <li>
+       <img class="col-md-6 col-sm-12" src="img/palette/pink-honey.jpg" alt=""><span>Pink Honey</span>
+      </li>
+      <li>
+       <img class="col-md-6 col-sm-12" src="img/palette/my-lady.jpg" alt=""><span>My lady</span>
+      </li>
+      <li>
+       <img class="col-md-6 col-sm-12" src="img/palette/spring-time.jpg" alt=""><span>Spring time</span>
+      </li>
+      <li>
+       <img class="col-md-6 col-sm-12" src="img/palette/spring-summer.jpg" alt=""><span>Spring to summer</span>
+      </li>
+      <li>
+       <img class="col-md-6 col-sm-12" src="img/palette/blue-ice.jpg" alt=""><span>Blue ice</span>
+      </li>
+      <li>
+       <img class="col-md-6 col-sm-12" src="img/palette/techno.jpg" alt=""><span>Techno</span>
+      </li>
+      <li>
+       <img class="col-md-6 col-sm-12" src="img/palette/pink-bubble.jpg" alt=""><span>Pink bubble</span>
+      </li>
+    </ul>
+</div>
 </div>
 
 @endsection

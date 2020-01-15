@@ -8,13 +8,13 @@
     poludisperzijom ili
     perivim akrilnim bojama. Krečenje obavljamo brzo i čisto. Takođe radimo gletovanje zidova i plafona koji su
     potrebni da
-    se gletuju. Dugogodišnje iskustvo možemo iskoristiti ako vam je potrebna adaptacija stana ili adaptacija kuće.
+    se gletuju. Dugogodišnje iskustvo možemo iskoristiti ako vam je potrebna adaptacija stana ili adaptacija kuće.<br>
     Iskusni
-    moleri ako su vam potrebni molerski radovi. Potreban vam je gipsani zid? Izvodimo radove gde se koriste gipsane
+    moleri ako su vam potrebni molerski radovi.<br><br> Potreban vam je gipsani zid?<br> Izvodimo radove gde se koriste gipsane
     ploče.
     Spušteni plafoni su nešto što može promeniti izgled celog prostora. Bavimo se izolacijom fasade sa stiroporom.
     Demit
-    fasada sa akrilnim završnim malterom. Izolacija zidova je nešto što se ljudima otplati za nekoliko godina.
+    fasada sa akrilnim završnim malterom. Izolacija zidova je nešto što se ljudima otplati za nekoliko godina.<br>
     Farbanje
     stolarije i ostale molersko farbarske radove.
   </p>

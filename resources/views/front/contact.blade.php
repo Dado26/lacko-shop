@@ -1,8 +1,12 @@
 @extends('front.layout')
 
 @section('content')
-
+                   
 <div class="description my-5">
+  @if(session()->has('success'))
+  <div class="alert alert-success">{{ session()->get('success') }}</div>
+  @endif
+  @include('partials.errors')
         <p class="page-title">Kontakt</p>
         <p>Pozovite ili pošaljite e-mail za pomoć u vezi bilo kakvih pitanja.</p>
         <div class="row container py-5 d-flex justify-content-between">
@@ -18,15 +22,16 @@
           </div>
           <div class="col-lg-6 col-md-12 card" style="width: 40rem;">
             <div class="card-body">
-              <form>
+              <form action="{{ route('email') }}" method="POST">
+                @csrf
                 <div class="form-group">
-                  <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Ime">
+                  <input type="text" class="form-control" name="name" placeholder="Ime">
                 </div>
                 <div class="form-group">
-                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="e-mail">
+                  <input type="email" class="form-control" name="email" placeholder="e-mail">
                 </div>
                 <div class="form-group">
-                  <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Broj telefona">
+                  <input type="text" class="form-control" name="number" placeholder="Broj telefona (opciono)">
                 </div>
                 <div class="form-group">
                   <textarea class="col-lg-12 contact-message" name="message" id="" rows="5"

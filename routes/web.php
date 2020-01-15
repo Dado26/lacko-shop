@@ -41,6 +41,9 @@ Route::get('/type', 'Front\FrontController@getType')->name('type');
 Route::get('/gallery/{gallery?}', 'Front\FrontController@getGallery')->name('gallery');
 Route::get('/index', 'Front\FrontController@getIndex')->name('index');
 
+Route::post('/contact', 'Front\ContactController@sendEmail')->name('email');
+
+
 
 
 
