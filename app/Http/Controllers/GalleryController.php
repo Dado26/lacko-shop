@@ -42,16 +42,13 @@ class GalleryController extends Controller
 
         $gallery->update($data);
 
+        session()->flash('success', 'Gellery name was updated succesffuly');
         return redirect()->back();
     }
 
     public function destroy(Gallery $gallery)
     {
-        /* if($gallery->pictures()->exists() ){
-            //dd($gallery->pictures());
-            session()->flash('error', 'You have photos in this gallery');
-            return redirect()->back();
-        } */
+       
         foreach ($gallery->pictures as $picture) {
             unlink(storage_path('app/public/' . $picture->url));
         }

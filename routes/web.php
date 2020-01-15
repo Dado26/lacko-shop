@@ -12,7 +12,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('/login', 'AuthController@loginAttempt')->name('admin.login_attempt');
     });
 
-    Route::group(['middleware' => 'auth:web'], function () {
+    Route::group(['middleware' => 'auth'], function () {
 
         Route::get('/logout', 'AuthController@logOut')->name('logout');
 
@@ -23,7 +23,7 @@ Route::group(['prefix' => 'admin'], function () {
 
         Route::post('/gallery/picture', 'PictureController@store')->name('picture.store');
         Route::get('/gallery/{gallery}/pictures', 'PictureController@index')->name('pictures.index');
-        Route::get('/gallery/{gallery}/pictures/{picture}', 'PictureController@destroy')->name('picture.delete');
+        Route::get('/pictures/{picture}', 'PictureController@destroy')->name('picture.delete');
 
         Route::get('/news', 'NewsController@index')->name('news.index');
         Route::post('/news', 'NewsController@store')->name('news.store');
@@ -33,6 +33,22 @@ Route::group(['prefix' => 'admin'], function () {
 
     });
 });
+
+Route::get('/about', 'Front\FrontController@getAbout')->name('about');
+Route::get('/contact', 'Front\FrontController@getContact')->name('contact');
+Route::get('/news', 'Front\FrontController@getNews')->name('news');
+Route::get('/type', 'Front\FrontController@getType')->name('type');
+Route::get('/gallery/{gallery?}', 'Front\FrontController@getGallery')->name('gallery');
+Route::get('/index', 'Front\FrontController@getIndex')->name('index');
+
+
+
+
+
+
+
+
+
 
 
 

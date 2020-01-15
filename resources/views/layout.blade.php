@@ -45,7 +45,7 @@
                         </a>
                         <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="ti-more"></i></a>
                     </div>
-                    <div class="navbar-collapse collapse" id="navbarSupportedContent" style="background: #fff">
+                    <div class="navbar-collapse collapse" id="navbarSupportedContent" style="margin-top:-30px; padding-top:27px; background: #fff">
                         <ul class="navbar-nav float-left mr-auto ml-3 pl-1"></ul>
                         <ul class="navbar-nav float-right">
                             <li class="nav-item mr-2">
@@ -92,18 +92,15 @@
 
                     </nav>
                     <!-- End Sidebar navigation -->
-                    <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;">
-                        <div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div>
-                    </div>
-                    <div class="ps-scrollbar-y-rail" style="top: 0px; height: 780px; right: 3px;">
-                        <div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 574px;"></div>
-                    </div>
                 </div>
                 <!-- End Sidebar scroll-->
             </aside>
 
             <div class="page-wrapper" style="display: block;">
                 <div class="container-fluid">
+                    @if(session()->has('success'))
+                    <div class="alert alert-success">{{ session()->get('success') }}</div>
+                    @endif
                     <!-- basic table -->
                     @yield('content')
                 </div>
@@ -113,79 +110,6 @@
                 </footer>
             </div>
         </div>
-<<<<<<< HEAD
-        <!-- ============================================================== -->
-        <!-- End Page wrapper  -->
-        <!-- ============================================================== -->
-    </div>
-    <!-- ============================================================== -->
-    <!-- End Wrapper -->
-    <!-- ============================================================== -->
-    <!-- End Wrapper -->
-    <!-- ============================================================== -->
-    <!-- All Jquery -->
-    <!-- ============================================================== -->
-    <script src="{{ asset('js/jquery-2.2.0.min.js') }}"></script>
-    <script src="{{ asset('js/popper.min.js') }}"></script>
-    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
-    <!-- apps -->
-    <!-- apps -->
-    <script>
-        /*
-    $(".delete").on("submit", function(){
-        return confirm("Do you want to delete this item?");
-    });
-
-   
-    $(".delete-gallery").on("submit", function(){ 
-        return confirm("Do you want to delete this gallery? All pictures with in will be deleted");
-    });
-*/
-$(".btn-delete").on("click", function(){
-    var $deleteBtn = $(this);
-
-    $.confirm({
-        title: 'Confirm!',
-        content: 'Do you want to delete this news?',
-        buttons: {
-            confirm: function () {
-                $deleteBtn.closest('form').submit();
-            },
-            cancel: function () {
-                $.alert('Canceled!');
-            }
-        }
-    });
-});
-
-$(".btn-delete-gallery").on("click", function(){
-    var $deleteBtn = $(this);
-
-    $.confirm({
-        title: 'Confirm!',
-        content: 'Do you want to delete this gallery? All pictures within will be deleted!!',
-        buttons: {
-            confirm: function () {
-                $deleteBtn.closest('form').submit();
-            },
-            cancel: function () {
-                $.alert('Canceled!');
-            }
-        }
-    });
-});
-    </script>
-    
-    
-    
-    
-    
-
-
-</body>
-</html>
-=======
 
         <script src="{{ asset('js/jquery-2.2.0.min.js') }}"></script>
         <script src="{{ asset('js/popper.min.js') }}"></script>
@@ -238,4 +162,3 @@ $(".btn-delete-gallery").on("click", function(){
 
     </body>
 </html>
->>>>>>> 53748dcd6aeeafe91bd04f204d19e7c6299d5bc3

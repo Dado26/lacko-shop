@@ -1,0 +1,177 @@
+.nav-bg {
+  background-image: url(../img/bg-header.png);
+  background-color: #f8f8f8;
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 161px;
+}
+
+.nav-links-bg {
+  background-color: #575757;
+  border-radius: 5px;
+  box-shadow: 0px 0px 17px 0px #535353;
+}
+
+.bg-colors {
+  background-image: url(../img/colors.jpg);
+  background-position: center; 
+  background-repeat: no-repeat;
+  height: 450px;
+}
+
+.description {
+  padding: 80px;
+  font-size: 18px;
+  border: 1px solid #cacacac4;
+  border-radius: 10px;
+}
+
+.description-title {
+  color: #e91391;
+  font-family: 'Forum-Regular';
+  font-size: 30px;
+}
+
+.page-title {
+  color: #ff9600;
+  font-family: 'Forum-Regular';
+  font-size: 30px;
+}
+
+.action-title {
+  color: #ff9600;
+  font-family: 'Forum-Regular';
+  font-size: 25px;
+}
+
+.action-description {
+  font-size: 18px;
+}
+
+.social a {
+  font-size: 35px;
+  color: #898989;
+}
+
+.color-palette {
+  margin-top: 50px;
+}
+
+.color-palette ul {
+  padding-left: 15px;
+}
+
+.color-palette ul li {
+  margin-bottom: 40px;
+  list-style: none;
+}
+
+.color-palette ul li span{
+  margin-left: 40px;
+}
+
+.border-none {
+  border: none;
+}
+
+.type-image {
+  margin-top: 8px;
+}
+
+.type-image img {
+  width: 292px;
+  border: 3px solid black;
+}
+
+.card {
+  border: none !important;
+}
+
+.card .card-body p {
+  margin: 0;
+}
+
+.card .card-body a {
+  color: #ff9600;
+}
+
+.contact-message {
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+}
+
+footer {
+  background-image: url(../img/bg-footer.png);
+  background-color: #f8f8f8;
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 230px;
+}
+
+.copyright {
+  color: #a5a5a5;
+  font-size: 14px;
+}
+
+@media only screen and (max-width: 375px) {
+  nav ul li a {
+    text-align: center;
+  }
+
+  .description {
+    padding: 10px;
+  }
+
+  .description-text {
+    margin-top: 30px;
+  }
+
+  .thumbnail {
+    margin-top: 50px;
+  }
+
+  .thumbnail:first-child {
+    margin-top: 0;
+  }
+
+  .copyright {
+    font-size: 12px;
+  }
+
+  .social {
+    text-align: center;
+    padding: 0 !important;
+  }
+
+  .logo {
+    text-align: center;
+  }
+
+  footer {
+    height: 280px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+  .description {
+    margin: 0;
+  }
+
+  .description-text {
+    margin-top: 30px;
+  }
+
+  footer .social a {
+    text-align: right;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  footer .social a {
+    text-align: right;
+  }
+}
+

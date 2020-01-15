@@ -8,10 +8,10 @@
     <div class="row">
         <div class="col-sm-12 col-md-6">
             <div class="card">
-                <h4 class="card-title">Edit gallery name</h4>
+                <h4 class="card-title" style="padding-left:25px; padding-top:25px;">Edit gallery name</h4>
                 <h6 class="card-subtitle"></h6>
 
-                <div class="card-body">
+                <div class="card-body" style="padding-top:0px;">
                     <form class="mt-3" _lpchecked="1" action="{{ route('gallery.update', $gallery->id) }}" method="POST">
                         @csrf
                         <input type="hidden" name="_method" value="PUT">
@@ -31,7 +31,7 @@
         <div class="col-sm-12 col-md-6">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Photo Upload</h4>
+                    <h4 class="card-title">Photo upload</h4>
 
                     <form action="{{ route('picture.store') }}" enctype="multipart/form-data" method="POST">
                         @csrf
@@ -55,7 +55,7 @@
                     <div class="card-body p-4">
                         <img src="{{ '/storage/'.$picture->url }}" style="max-width: 100%">
 
-                        <a href="{{ route('picture.delete', ['gallery' => $gallery->id, 'picture' => $picture->id]) }}" class="btn btn-danger delete d-block w-100">Delete</a>
+                        <a href="{{ route('picture.delete',  $picture->id) }}" class="btn btn-danger delete d-block w-100">Delete</a>
                     </div>
                 </div>
             @endforeach

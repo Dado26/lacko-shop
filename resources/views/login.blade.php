@@ -44,15 +44,7 @@
                             <h2 class="mt-5 text-center">Admin Panel</h2>
                             <p class="text-center font-12">Enter your email address and password to access admin panel.</p>
 
-                            @if ($errors->any())
-                                <div class="alert alert-danger p-3 font-12">
-                                    <ul class="m-0 p-0">
-                                        @foreach ($errors->all() as $error)
-                                            <li class="ml-2 mb-1">{{ $error }}</li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            @endif
+                           @include('partials.errors')
 
                             <form class="mt-4" action="{{ route('admin.login_attempt') }}" method="POST">
                                 @csrf

@@ -52,7 +52,7 @@ class PictureController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      * @throws \Exception
      */
-    public function destroy(Gallery $gallery, Picture $picture)
+    public function destroy(Picture $picture)
     {
         unlink(storage_path('app/public/'.$picture->url));
 
