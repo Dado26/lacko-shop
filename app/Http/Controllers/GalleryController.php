@@ -14,18 +14,16 @@ class GalleryController extends Controller
         return view('galeries', compact('galleries'));
     }
 
-    public function create()
-    {
-    }
-
     public function store(Request $request)
     {
         $data = $request->validate([
             'name' => 'required|min:2',
         ]);
+
         Gallery::create($data);
 
-        session()->flash('success', 'Created succesffuly');
+        session()->flash('success', 'Created successfully');
+
         return redirect()->back();
     }
 
@@ -42,20 +40,22 @@ class GalleryController extends Controller
 
         $gallery->update($data);
 
-        session()->flash('success', 'Gellery name was updated succesffuly');
+        session()->flash('success', 'Gallery name was updated successfully');
+
         return redirect()->back();
     }
 
     public function destroy(Gallery $gallery)
     {
-       
         foreach ($gallery->pictures as $picture) {
-            unlink(storage_path('app/public/' . $picture->url));
+            unlink(storage_path('app/public/'.$picture->url));
+            unlink(storage_path('app/public/'.$picture->thumbnail));
         }
 
         $gallery->delete();
 
-        session()->flash('success', 'Deleted succesffuly');
+        session()->flash('success', 'Deleted successfully');
+
         return redirect()->back();
     }
 }

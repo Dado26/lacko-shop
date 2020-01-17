@@ -13,7 +13,6 @@ Route::group(['prefix' => 'admin'], function () {
     });
 
     Route::group(['middleware' => 'auth'], function () {
-
         Route::get('/logout', 'AuthController@logOut')->name('logout');
 
         Route::get('/gallery', 'GalleryController@index')->name('index.gallery');
@@ -30,7 +29,6 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/news/{news}/edit', 'NewsController@edit')->name('news.edit');
         Route::put('/news/{news}/edit', 'NewsController@update')->name('news.update');
         Route::delete('/news/{news}/delete', 'NewsController@destroy')->name('news.delete');
-
     });
 });
 
@@ -42,18 +40,6 @@ Route::get('/galerija/{gallery?}', 'Front\FrontController@getGallery')->name('ga
 Route::get('/', 'Front\FrontController@getIndex')->name('index');
 
 Route::post('/kontakt', 'Front\ContactController@sendEmail')->name('email');
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
