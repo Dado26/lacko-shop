@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="/css/fontawesome/all.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="/css/main.css">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
-  <link rel="script" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js">
-  <title>Aktuelnosti</title>
+  <script src="https://kit.fontawesome.com/84c500e8b9.js" crossorigin="anonymous"></script>
+  <title>Početna</title>
 </head>
-
 <body>
+<div class="wrapper">
   <nav class="navbar navbar-expand-lg navbar-light nav-bg">
     <div class="container">
-      <a class="navbar-brand navbar-logo pl-5" href="index.html"><img src="img/logo.png" alt=""></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand navbar-logo pl-5" href="{{route('index')}}"><img src="img/logo.png" alt=""></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       @include('front.partials.navigation')
@@ -25,33 +23,34 @@
   </nav>
 
   <main>
-
-    <div class="container">
         @yield('content')
-    </div>
-        @yield('container')
   </main>
+</div>
 
-  <footer>
-    <div class="container">
-      <div class="row pt-5 px-5">
-        <div class="logo col-lg-6 col-md-6 col-sm-12">
-          <a href="index.html"><img src="img/logo.png" alt=""></a>
-        </div>
-        <div class="social col-lg-6 col-md-6 col-sm-12">
-          <a href="https://www.facebook.com/Lacko-Colors-Molerski-radovi-1476137796048524/timeline/" target="_blank"><i
-              class="mr-3 fab fa-facebook-square"></i></a>
-          <a href="mailto:lackonadezdajan@gmail.com"><i class="mr-3 fas fa-envelope" target="_blank"></i></a>
-          <a href="https://plus.google.com/112752112665938542292/posts?hl=sr" target="_blank"><i
-              class="fab fa-google-plus-g"></i></a>
-        </div>
+<footer>
+  <div class="container">
+    <div class="row pt-5 px-5">
+      <div class="logo col-lg-6 col-md-6 col-sm-12">
+      <a href="{{route('index')}}"><img src="img/logo.png" alt=""></a>
       </div>
-      <div class="copyright d-flex justify-content-center mt-5">
-        Copyright © STUDIO El Shaddai 2015. All Rights Reserved
+      <div class="social col-lg-6 col-md-6 col-sm-12">
+        <a href="https://www.facebook.com/Lacko-Colors-Molerski-radovi-1476137796048524/timeline/" target="_blank"><i class="mr-3 fab fa-facebook-square"></i></a>
+        <a href="mailto:lackonadezdajan@gmail.com"><i class="mr-3 fas fa-envelope" target="_blank"></i></a>
       </div>
     </div>
-  </footer>
+    <div class="copyright d-flex justify-content-center mt-5">
+      Copyright © STUDIO El Shaddai 2015. All Rights Reserved
+    </div>
+  </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+
+@yield('gallery-script')
 
 </body>
-
 </html>

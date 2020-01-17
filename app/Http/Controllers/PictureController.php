@@ -35,10 +35,12 @@ class PictureController extends Controller
 
         if ($request->hasFile('url')) {
             $data['url'] = $request->url->store('uploads', 'public');
-            $data        = Picture::create($data);
-            $image       = Image::make(public_path('storage/'.$data->url))->fit(650, 650);
-            $image->save();
-
+            $picture     = Picture::create($data);
+            Image::make(public_path('storage/'.$picture->url))->fit(800, 800)->save();
+           
+            $picture->update(['thumbnail' => 'uploads/thumb_'.uniqid().'.jpg']);
+            Image::make(public_path('storage/'.$picture->url))->fit(150, 150)->save(public_path('storage/'.$picture->thumbnail));
+            
             session()->flash('success', 'Photo was uploaded successfully');
         }
 
@@ -55,6 +57,8 @@ class PictureController extends Controller
     public function destroy(Picture $picture)
     {
         unlink(storage_path('app/public/'.$picture->url));
+
+        unlink(storage_path('app/public/'.$picture->thumbnail));
 
         $picture->delete();
 

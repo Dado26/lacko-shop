@@ -1,3 +1,7 @@
+.wrapper {
+  min-height: calc(100vh - 230px);
+}
+
 .nav-bg {
   background-image: url(../img/bg-header.png);
   background-color: #f8f8f8;
@@ -5,12 +9,32 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: 161px;
+  background-color: #fff;
+}
+
+.navbar-logo {
+  margin-top: -40px;
 }
 
 .nav-links-bg {
-  background-color: #575757;
+  background-color: #5b5b5b;
   border-radius: 5px;
-  box-shadow: 0px 0px 17px 0px #535353;
+  margin: -25px 20px 0 0;
+}
+
+.nav-links-bg .navbar-nav {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #bbb !important;
+}
+
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+  color: #fff !important;
 }
 
 .bg-colors {
@@ -21,7 +45,7 @@
 }
 
 .description {
-  padding: 80px;
+  padding: 55px 70px;
   font-size: 18px;
   border: 1px solid #cacacac4;
   border-radius: 10px;
@@ -39,6 +63,12 @@
   font-size: 30px;
 }
 
+h3 {
+  color: #ff9600;
+  font-family: 'Forum-Regular';
+  font-size: 26px;
+}
+
 .action-title {
   color: #ff9600;
   font-family: 'Forum-Regular';
@@ -47,6 +77,10 @@
 
 .action-description {
   font-size: 18px;
+}
+
+.social {
+  text-align: end;
 }
 
 .social a {
@@ -77,6 +111,7 @@
 
 .type-image {
   margin-top: 8px;
+  z-index: -1;
 }
 
 .type-image img {
@@ -84,16 +119,12 @@
   border: 3px solid black;
 }
 
-.card {
-  border: none !important;
-}
-
-.card .card-body p {
-  margin: 0;
-}
-
-.card .card-body a {
+a {
   color: #ff9600;
+}
+
+a:hover, a:active {
+  color: #E36B00;
 }
 
 .contact-message {
@@ -108,6 +139,7 @@ footer {
   background-repeat: no-repeat;
   background-size: cover;
   height: 230px;
+  background-color: #fff;
 }
 
 .copyright {
@@ -115,7 +147,47 @@ footer {
   font-size: 14px;
 }
 
-@media only screen and (max-width: 375px) {
+/*  gallery */
+.ug-gallery-wrapper.ug-lightbox {
+  opacity: 1 !important;
+}
+
+.ug-lightbox .ug-lightbox-overlay {
+  background-color: rgba(30, 30, 30, 0.85) !important;
+}
+
+.side-menu a.item {
+  font-size: 18px;
+  display: block;
+  line-height: 40px;
+  border-bottom: 1px solid #eee;
+  color: #333;
+  text-decoration: none;
+}
+
+.side-menu a.item:hover {
+  opacity: 0.7;
+}
+
+form.contact input,
+form.contact textarea {
+  padding: 25px 20px;
+  font-size: 16px;
+}
+
+form.contact textarea {
+  padding: 15px 20px;
+}
+
+form.contact button[type="submit"] {
+  width: 120px;
+}
+
+button:focus {
+  outline: none;
+}
+
+@media all and (max-width: 375px) {
   nav ul li a {
     text-align: center;
   }
@@ -152,9 +224,16 @@ footer {
   footer {
     height: 280px;
   }
+
+  footer .social {
+    text-align: center;
+  }
 }
 
-@media only screen and (max-width: 768px) {
+@media all and (max-width: 768px) {
+  .bg-colors {
+    background-size: 500px;
+  }
 
   .description {
     margin: 0;
@@ -164,13 +243,46 @@ footer {
     margin-top: 30px;
   }
 
-  footer .social a {
+  footer .social {
     text-align: right;
   }
 }
 
-@media only screen and (max-width: 1024px) {
-  footer .social a {
+@media all and (max-width: 991px) {
+  nav.navbar .container {
+    position: relative;
+    min-height: 146px;
+  }
+
+  button.navbar-toggler {
+    position: absolute;
+    top: 25px;
+    right: 0;
+    background-color: #bbb;
+    border: 1px solid #888 !important;
+  }
+
+  button.navbar-toggler span {
+    color: #333;
+  }
+
+  .nav-links-bg {
+    width: 100%;
+    position: absolute;
+    top: 130px;
+  }
+
+  .navbar-nav .nav-item a {
+    padding: 20px;
+    font-size: 22px;
+    text-align: center;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #777;
+  }
+}
+
+@media all and (max-width: 1024px) {
+  footer .social {
     text-align: right;
   }
 }

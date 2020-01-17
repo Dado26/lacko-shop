@@ -6,9 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Picture extends Model
 {
-    protected $fillable = ['name','url','gallery_id'];
+    protected $fillable = ['name','url','gallery_id','thumbnail'];
 
-    public function gallery(){
-        $this->belongsTo(Gallery::class);
-    }
+
 }

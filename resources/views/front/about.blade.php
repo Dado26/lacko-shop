@@ -1,7 +1,8 @@
 @extends('front.layout')
 
 @section('content')
-<div class="description my-5">
+<div class="container">
+ <div class="description mt-3 mb-5">
   <p class="page-title">O Nama</p>
   <p class="mt-1">
     Bavimo se uređenjem enterijera i exterijera u građevinarstvu. Ako vam je potrebno krečenje stana. Sa
@@ -18,5 +19,6 @@
     Farbanje
     stolarije i ostale molersko farbarske radove.
   </p>
+ </div>
 </div>
 @endsection

@@ -19,10 +19,10 @@ class ContactController extends Controller
                 'number' => 'nullable|max:120',
                 'message' => 'required|min:2|max:500',
         ],['name.required' => 'Polje ime je obavezno!',
-        'name.min' => 'Neophodno je da unesete najmanje dva haraktera!',
+        'name.min' => 'Neophodno je da unesete najmanje dva haraktera u polje ime!',
         'email.required' => 'Polje e-mail je obavezno!',
         'message.required' => 'Polje poruka je obavezno!',
-        'message.min' => 'Neophodno je da unesete najmanje dva haraktera!']);
+        'message.min' => 'Neophodno je da unesete najmanje dva haraktera u polje poruka!']);
 
         $email = User::get()->first()->email;
          
