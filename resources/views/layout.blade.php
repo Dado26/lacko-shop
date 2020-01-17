@@ -10,9 +10,9 @@
         <title>{{ config('app.name') }} - Admin Panel</title>
         <!-- This page css -->
         <!-- Custom CSS -->
-        <link href="{{ asset('/css/style.min.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="{{ asset('/css/style.min.css') }}" rel="stylesheet">
         <script src="https://kit.fontawesome.com/84c500e8b9.js" crossorigin="anonymous"></script>
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

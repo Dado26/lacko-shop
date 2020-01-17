@@ -34,14 +34,14 @@ Route::group(['prefix' => 'admin'], function () {
     });
 });
 
-Route::get('/about', 'Front\FrontController@getAbout')->name('about');
-Route::get('/contact', 'Front\FrontController@getContact')->name('contact');
-Route::get('/news', 'Front\FrontController@getNews')->name('news');
-Route::get('/type', 'Front\FrontController@getType')->name('type');
-Route::get('/gallery/{gallery?}', 'Front\FrontController@getGallery')->name('gallery');
-Route::get('/index', 'Front\FrontController@getIndex')->name('index');
+Route::get('/o-nama', 'Front\FrontController@getAbout')->name('about');
+Route::get('/kontakt', 'Front\FrontController@getContact')->name('contact');
+Route::get('/aktuelnosti', 'Front\FrontController@getNews')->name('news');
+Route::get('/vrste-radova', 'Front\FrontController@getType')->name('type');
+Route::get('/galerija/{gallery?}', 'Front\FrontController@getGallery')->name('gallery');
+Route::get('/', 'Front\FrontController@getIndex')->name('index');
 
-Route::post('/contact', 'Front\ContactController@sendEmail')->name('email');
+Route::post('/kontakt', 'Front\ContactController@sendEmail')->name('email');
 
 
 
