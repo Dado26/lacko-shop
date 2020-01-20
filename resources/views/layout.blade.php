@@ -81,6 +81,14 @@
                                     </i>
                                 </a>
                             </li>
+
+                            <li class="sidebar-item {{ (request()->is('admin/admin*')) || (request()->is('admin/create')) ? 'selected' : '' }}">
+                                <a class="sidebar-link" href="{{ route('admins.index') }}" aria-expanded="false">
+                                    <i class="fas fa-users-cog" style="margin:5px">
+                                        <span class="hide-menu" style="font-family: sans-serif;"> &nbsp;Admins </span>
+                                    </i>
+                                </a>
+                            </li>
                             <li class="list-divider"></li>
 
                             <li class="sidebar-item">

@@ -29,6 +29,13 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/news/{news}/edit', 'NewsController@edit')->name('news.edit');
         Route::put('/news/{news}/edit', 'NewsController@update')->name('news.update');
         Route::delete('/news/{news}/delete', 'NewsController@destroy')->name('news.delete');
+
+        Route::get('/admins', 'AdminController@index')->name('admins.index');
+        Route::get('/create', 'AdminController@create')->name('admin.create');
+        Route::post('/admin', 'AdminController@store')->name('admin.store'); 
+        Route::get('/admin/{admin}/edit', 'AdminController@edit')->name('admin.edit');
+        Route::put('/admin/{admin}/edit', 'AdminController@update')->name('admin.update');
+        Route::delete('/admin/{admin}/delete', 'AdminController@destroy')->name('admin.delete');
     });
 });
 

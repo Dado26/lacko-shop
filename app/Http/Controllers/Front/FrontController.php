@@ -38,7 +38,7 @@ class FrontController extends Controller
         public function getGallery(Gallery $gallery = null)
         {
             $galleries = Gallery::with('pictures')->get();
-           // dd($gallery);
+          
             return view('front.gallery', compact('galleries', 'gallery'));
         }
 }

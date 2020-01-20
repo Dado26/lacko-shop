@@ -10,8 +10,8 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="side-menu">
-                        @foreach ($galleries as $gallery)
-                            <a class="item" href="{{ route('gallery', $gallery->id) }}">{{ $gallery->name }}</a>
+                        @foreach ($galleries as $galery)
+                            <a class="item" href="{{ route('gallery', $galery->id) }}">{{ $galery->name }}</a>
                         @endforeach
                     </div>
                 </div>
