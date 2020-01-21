@@ -29,6 +29,13 @@ class AdminRequest extends FormRequest
             'password'   => 'confirmed|required|min:6',
         ];
 
+        if (request()->isMethod('PUT') && empty(request()->get('password'))) {
+            unset($rules['password']);
+        }
+        if (request()->isMethod('PUT')) {
+            $rules['email'] =  'required|email|unique:users,email,' . request()->admin->id;
+        }
+
 
         return $rules;
     }

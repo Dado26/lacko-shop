@@ -51,13 +51,9 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, User $admin)
+    public function update(AdminRequest $request, User $admin)
     {
-        $data = $request->validate([
-            'name'  => 'required|min:2',
-            'email' => 'required|email|unique:users,email,' . $admin->id,
-            'password'   => 'nullable|min:6|confirmed',
-        ]);
+        $data = $request->all();
         if($data['password'] != null){
             $data['password'] = bcrypt($data['password']);
         }else{
