@@ -79,10 +79,14 @@ class AdminController extends Controller
      */
     public function destroy(User $admin)
     {
-        $admin->delete();
+        if(User::count() > 1){
+            $admin->delete();
 
-        session()->flash('success', 'Admin was deleted successfully');
-
+            session()->flash('success', 'Admin was deleted successfully');
+        }else{
+            session()->flash('error', "You can't delete last admin!");
+        }
+       
         return redirect()->back();
     }
 }

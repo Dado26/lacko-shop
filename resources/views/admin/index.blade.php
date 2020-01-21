@@ -1,12 +1,14 @@
 @extends('layout')
 
 @section('content')
-
+                    @if(session()->has('error'))
+                    <div class="alert alert-danger">{{ session()->get('error') }}</div>
+                    @endif
 <div class="row">
   <div class="col-sm-12 col-md-8 col-lg-8">
     <a href="{{ route('admin.create') }}" class="btn btn-success" style="width: 190px; display: inline-block; margin-bottom: 40px;">Create Admin</a>
     <div class="card">
-        <h4 class="card-title m-4">Adminstrators</h4>
+        <h4 class="card-title m-4">Administrators</h4>
 
         <div class="table-responsive">
             <table class="table">

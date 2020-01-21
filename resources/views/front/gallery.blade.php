@@ -11,7 +11,11 @@
                 <div class="col-md-3">
                     <div class="side-menu">
                         @foreach ($galleries as $galery)
-                            <a class="item" href="{{ route('gallery', $galery->id) }}">{{ $galery->name }}</a>
+                        @if ($loop->first && request()->is('galerija'))
+                        <a class="item" style="opacity:0.6;" href="{{ route('gallery', $galery->id) }}">{{ $galery->name }}</a>
+                        @else
+                            <a class="item" {{ (request()->is('galerija/'.$galery->id))  ? 'style=opacity:0.6' : '' }} href="{{ route('gallery', $galery->id) }}">{{ $galery->name }}</a>
+                        @endif
                         @endforeach
                     </div>
                 </div>
@@ -24,7 +28,7 @@
                             @endforeach
                         @else
                             @foreach ($galleries->first()->pictures as $picture)
-                                <a href="#"><img alt="{{ $galleries->first()->name }}" src="{{ '/storage/'.$picture->url}}" data-image="{{'/storage/'.$picture->thumbnail}}"></a>
+                                <a href="#"><img alt="{{ $galleries->first()->name }}" src="{{ '/storage/'.$picture->thumbnail}}" data-image="{{'/storage/'.$picture->url}}"></a>
                             @endforeach
                         @endif
                     </div>
