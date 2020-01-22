@@ -35,14 +35,17 @@ class PictureController extends Controller
         ], [], ['url' => 'upload']);
 
         if ($request->hasFile('url')) {
-            $data['url'] = $request->url->store('uploads', 'public');
+            $image = $request->file('url');
+            $data['url'] = 'uploads/'.time() . '.' . $image->getClientOriginalExtension();
+            $path = public_path('/uploads');
+            $image->move($path, $data['url']);
 
             $picture = Picture::create($data);
-            Image::make(public_path('storage/'.$picture->url))->fit(800, 800)->save();
+            Image::make(public_path($picture->url))->fit(800, 800)->save();
 
             $picture->update(['thumbnail' => 'uploads/thumb_'.uniqid().'.jpg']);
             $height = Arr::random([100, 150, 200]); // to make the gallery more interesting
-            Image::make(public_path('storage/'.$picture->url))->fit(150, $height)->save(public_path('storage/'.$picture->thumbnail));
+            Image::make(public_path($picture->url))->fit(150, $height)->save(public_path($picture->thumbnail));
 
             session()->flash('success', 'Photo was uploaded successfully');
         }
@@ -58,8 +61,8 @@ class PictureController extends Controller
      */
     public function destroy(Picture $picture)
     {
-        unlink(storage_path('app/public/'.$picture->url));
-        unlink(storage_path('app/public/'.$picture->thumbnail));
+        unlink(public_path('/'.$picture->url));
+        unlink(public_path('/'.$picture->thumbnail));
 
         $picture->delete();
 

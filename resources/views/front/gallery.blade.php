@@ -24,11 +24,11 @@
                     <div id="gallery" style="display:none;">
                         @if ($gallery)
                             @foreach($gallery->pictures as $picture)
-                                <a href="#"><img alt="{{$gallery->name }}" src="{{ '/storage/'.$picture->thumbnail }}" data-image="{{'/storage/'.$picture->url}}"></a>
+                                <a href="#"><img alt="{{$gallery->name }}" src="{{ '/'.$picture->thumbnail }}" data-image="{{'/'.$picture->url}}"></a>
                             @endforeach
                         @else
                             @foreach ($galleries->first()->pictures as $picture)
-                                <a href="#"><img alt="{{ $galleries->first()->name }}" src="{{ '/storage/'.$picture->thumbnail}}" data-image="{{'/storage/'.$picture->url}}"></a>
+                                <a href="#"><img alt="{{ $galleries->first()->name }}" src="{{'/'. $picture->thumbnail}}" data-image="{{'/'.$picture->url}}"></a>
                             @endforeach
                         @endif
                     </div>

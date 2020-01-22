@@ -24,9 +24,11 @@ class ContactController extends Controller
         'message.required' => 'Polje poruka je obavezno!',
         'message.min' => 'Neophodno je da unesete najmanje dva haraktera u polje poruka!']);
 
-        $email = User::get()->first()->email;
-         
-        Mail::to($email)->send(new Contact($param));
+        $emails = User::get()->pluck('email');
+        foreach($emails as $email){
+            Mail::to($email)->send(new Contact($param));
+        }
+        
 
         session()->flash('success', 'E-mail je uspešno poslat');
         return redirect()->back();

@@ -53,7 +53,7 @@
             @foreach($pictures as $picture)
                 <div class="card mr-2 mb-2 d-inline-block" style="max-width:19%">
                     <div class="card-body p-4">
-                        <img src="{{ '/storage/'.$picture->url }}" style="max-width: 100%">
+                        <img src="{{ '/'.$picture->url }}" style="max-width: 100%">
 
                         <a href="{{ route('picture.delete',  $picture->id) }}" class="btn btn-danger delete d-block w-100">Delete</a>
                     </div>
