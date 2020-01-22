@@ -11,7 +11,7 @@
                     <img src="/img/moder-room.jpg" alt="moder-room" class="img-fluid-100">
                     <div class="mt-2 mb-4"><small>Modern life style</small></div>
                 </div>
-                <div class="col-lg-8 col-md-12 col-sm-12 description-text">
+                <div class="col-lg-8 col-md-12 col-sm-12 description-text mb-50">
                     <p>
                         Bavimo se uređenjem enterijera i exterijera u građevinarstvu. Ako vam je potrebno krečenje stana. Sa poludisperzijom
                         ili perivim akrilnim bojama. Krečenje obavljamo brzo i čisto. Takođe radimo gletovanje zidova i plafona koji su potrebni
