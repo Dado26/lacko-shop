@@ -48,8 +48,8 @@ class GalleryController extends Controller
     public function destroy(Gallery $gallery)
     {
         foreach ($gallery->pictures as $picture) {
-            unlink(storage_path('app/public/'.$picture->url));
-            unlink(storage_path('app/public/'.$picture->thumbnail));
+            unlink(public_path('/'.$picture->url));
+            unlink(public_path('/'.$picture->thumbnail));
         }
 
         $gallery->delete();
