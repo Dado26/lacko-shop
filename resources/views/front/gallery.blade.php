@@ -6,7 +6,8 @@
     <div class="container">
         <div class="description mt-3 mb-5">
             <p class="page-title">Galerija</p>
-                              
+
+            @if($galleries->count() > 0)                        
             <div class="row">
                 <div class="col-md-3">
                     <div class="side-menu">
@@ -27,13 +28,14 @@
                                 <a href="#"><img alt="{{$gallery->name }}" src="{{ '/'.$picture->thumbnail }}" data-image="{{'/'.$picture->url}}"></a>
                             @endforeach
                         @else
-                            @foreach ($galleries ?? $galleries->first()->pictures as $picture)
+                            @foreach ($galleries->first()->pictures as $picture)
                                 <a href="#"><img alt="{{ $galleries->first()->name }}" src="{{'/'. $picture->thumbnail}}" data-image="{{'/'.$picture->url}}"></a>
                             @endforeach
                         @endif
                     </div>
                 </div>
-            </div>          
+            </div>
+            @endif
         </div>
     </div>
 @endsection
