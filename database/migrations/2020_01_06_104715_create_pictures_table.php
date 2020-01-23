@@ -18,7 +18,7 @@ class CreatePicturesTable extends Migration
             $table->unsignedBigInteger('gallery_id');
             $table->string('name')->nullable();
             $table->string('url');
-            $table->string('thumbnail');
+            $table->string('thumbnail')->nullable();
             $table->timestamps();
         });
     }

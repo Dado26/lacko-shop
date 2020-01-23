@@ -7,6 +7,7 @@
         <div class="description mt-3 mb-5">
             <p class="page-title">Galerija</p>
 
+            @if($galleries->count() > 0)                        
             <div class="row">
                 <div class="col-md-3">
                     <div class="side-menu">
@@ -34,6 +35,7 @@
                     </div>
                 </div>
             </div>
+            @endif
         </div>
     </div>
 @endsection
