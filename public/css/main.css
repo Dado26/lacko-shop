@@ -228,10 +228,15 @@ button:focus {
         color: #333;
     }
 
+    .mb-50 {
+        margin-bottom: 50px;
+    }
+
     .nav-links-bg {
         width: 100%;
         position: absolute;
         top: 130px;
+        z-index: 999;
     }
 
     .navbar-nav .nav-item a {

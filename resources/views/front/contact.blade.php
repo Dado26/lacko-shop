@@ -15,7 +15,7 @@
                 <div class="col-lg-4 d-none d-lg-block">
                     <img src="/img/contact_photo.jpg" class="img-thumbnail img-fluid">
                 </div>
-                <div class="col-lg-4 col-md-12">
+                <div class="col-lg-4 col-md-12 mb-5">
                     <p>Pozovite ili pošaljite e-mail za pomoć u vezi bilo kakvih pitanja.</p>
                     <p>e-mail: <a href="mailto:lackonadezdajan@gmail.com">lackonadezdajan@gmail.com</a></p>
                     <p>Tel / Viber: 0638060539</p>
